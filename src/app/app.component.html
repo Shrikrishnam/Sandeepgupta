@@ -1,0 +1,23 @@
+<div class="logo">
+  <img class="logo-image" src="https://www.flaticon.com/premium-icon/icons/svg/873/873565.svg">
+  <p class="logo-header">fat2fit</p>
+</div>
+<div class="navbar">
+  <button class="navbar-button" (click)="landingpage()"><i class="fas fa-home"></i> Home</button>
+  <button class="navbar-button" (click)="placeAppointment()"><i class="fas fa-user-plus"></i> Place Appointment</button>
+  <button class="navbar-button" (click)="viewAppointment()"><i class="fas fa-book-reader"></i> View Appointment</button>
+  <button class="navbar-button" (click)="contactUspage()"><i class="fas fa-phone-volume"></i> Contact Us</button>
+
+</div>
+
+<div class="section-page">
+  <div class="sidebar">
+    <button class="sidebar-button" (click)="landingpage()"><i class="fas fa-home"></i></button><br>
+    <button class="sidebar-button" (click)="placeAppointment()"><i class="fas fa-user-plus"></i></button><br>
+    <button class="sidebar-button" (click)="viewAppointment()"><i class="fas fa-book-reader"></i></button><br>
+    <button class="sidebar-button" (click)="contactUspage()"><i class="fas fa-phone-volume"></i></button>
+  </div>
+  <div class="content-page">
+    <router-outlet></router-outlet>
+  </div>
+</div>

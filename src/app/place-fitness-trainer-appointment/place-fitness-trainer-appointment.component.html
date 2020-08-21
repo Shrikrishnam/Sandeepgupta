@@ -1,0 +1,242 @@
+<h1 class="container text-color">Place An Appointment</h1>
+<div class="container place-appointment-section">
+    <form (ngSubmit)="onSubmit()" [formGroup]="fitnessForm">
+        <h4><i class="fas fa-users"></i> Personal Information</h4>
+        <div class="personal-information-section">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="firstname">First name:-</label>
+                        <input class="form-control" name="firstname" formControlName="firstname" id="firstname" placeholder="Enter your first name"  required autofocus>                        
+                        <div  *ngIf="fitnessForm.get('firstname').errors">
+                            <div>
+                                <p class="error-color" *ngIf="firstname.errors.required && lastname.touched">Name is Required</p>
+                            </div>
+                            <div>
+                                <p class="error-color" *ngIf="firstname.errors.pattern">Only characters allowed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="lastname">Last name:-</label>
+                        <input type="text" class="form-control" name="lastname" formControlName="lastname" id="lastname" placeholder="Enter your last name" required>
+                        <div *ngIf="fitnessForm.get('lastname').errors">
+                            <div>
+                                <p class="error-color" *ngIf="lastname.errors.required && lastname.touched">Last name is Required</p>
+                            </div>
+                            <div>
+                                <p class="error-color" *ngIf="lastname.errors.pattern">Only characters allowed </p>
+                            </div>
+                        </div>
+                    </div>                
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col-lg-12 form-group">
+                    <label for="email">Email:-</label>
+                    <input class="form-control" type="email" name="email" formControlName="email" id="email" placeholder="Enter your email" required>
+                    <div *ngIf="fitnessForm.get('email').errors">
+                        <div>
+                            <p class="error-color" *ngIf="email.errors.required && email.touched">email is required</p>
+                        </div>
+                        <div>
+                            <p class="error-color" *ngIf="email.errors.pattern">Email is not valid</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="phonenumber">Phone number:-</label>
+                        <input class="form-control" type="text" name="phonenumber" formControlName="phonenumber" id="phonenumber" placeholder="Enter your phone number" required>
+                        <div *ngIf="fitnessForm.get('phonenumber').errors">
+                            <div>
+                                <p class="error-color" *ngIf="phonenumber.errors.required && phonenumber.touched">Phone number is required</p>
+                            </div>
+                            <div>
+                                <p class="error-color" *ngIf="phonenumber.errors.pattern">Number should be in digits</p>
+                            </div>
+                            <div>
+                                <p class="error-color" *ngIf="phonenumber.errors.minlength">Mobile number should of 10 digit</p>
+                            </div>
+                            <div>
+                                <p class="error-color" *ngIf="phonenumber.errors.maxlength">Mobile number should be of 10 digit</p>
+                            </div>
+                        </div>
+                    </div>         
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="age">Age:-</label>
+                        <input class="form-control" type="number" name="age" id="age" formControlName="age" placeholder="Enter your age" required>
+                        <div *ngIf="fitnessForm.get('age').errors">
+                            <div>
+                                <p class="error-color" *ngIf="age.errors.required && age.touched">Age is required</p>
+                            </div>
+                            <div>
+                                <p class="error-color" *ngIf="age.errors.min">Age should be greater than 18 </p>
+                            </div>
+                            <div>
+                                <p class="error-color" *ngIf="age.errors.max">Age should be smaller than or equal to 60</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 form-group">
+                    <label for="streetaddress">Street address:-</label>
+                    <input type="text" class="form-control" name="streetaddress" formControlName="streetaddress" id="streetaddress" placeholder="Enter your street address" required>
+                    <div *ngIf="fitnessForm.get('streetaddress').errors">
+                        <div>
+                            <p class="error-color" *ngIf="streetaddress.errors.required && streetaddress.touched">Street address is required</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label for="city">City:-</label>
+                        <input class="form-control" type="text" name="city" formControlName="city" id="city" placeholder="Enter your city name" required>
+                        <div *ngIf="fitnessForm.get('city').errors">
+                            <div>
+                                <p class="error-color" *ngIf="city.errors.required && city.touched">Please enter your city name</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label for="state">State:-</label>
+                        <input class="form-control" type="text" name="state" formControlName="state" id="state" placeholder="Enter the state" required>
+                        <div *ngIf="fitnessForm.get('state').errors">
+                            <div>
+                                <p class="error-color" *ngIf="state.errors.required && state.touched">Please enter your state</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label for="country">Country:-</label>
+                        <input class="form-control" type="text" name="country" formControlName="country"  id="country" placeholder="Enter your country name" required>
+                        <div *ngIf="fitnessForm.get('country').errors">
+                            <div>
+                                <p class="error-color" *ngIf="country.errors.required && country.touched">Please enter your country</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label for="pincode">Pincode:-</label>
+                        <input class="form-control" type="text" name="pincode" formControlName="pincode" id="pincode" placeholder="Enter pincode" required>
+                        <div *ngIf="fitnessForm.get('pincode').errors">
+                            <div>
+                                <p class="error-color" *ngIf="pincode.errors.required && pincode.touched">Pincode is required</p>
+                            </div>
+                            <div>
+                                <p class="error-color" *ngIf="pincode.errors.pattern">charaters are not allowed</p>
+                            </div>
+                            <div>
+                                <p class="error-color" *ngIf="pincode.errors.minlength">Pincode must be of 6 digit</p>
+                            </div>
+                            <div>
+                                <p class="error-color" *ngIf="pincode.errors.maxlength">Pincode must be of 6 digits</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br ><br >
+        <h4><i class="far fa-clipboard"></i> Preferences</h4>
+        <div class="preferences-section">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="physiotherapist">Do you need physiotherapist:-</label>
+                        <select class="form-control" name="physiotherapist" formControlName="physiotherapist" id="physiotherapist" >
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                        <div *ngIf="fitnessForm.get('physiotherapist').errors">
+                            <p class="error-color" *ngIf="physiotherapist.errors.required && physiotherapist.touched">Please Select Either value</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="trainerpreference">Please select your trainer preference:-</label>
+                        <select class="form-control" name="trainerpreference" formControlName="trainerpreference" id="trainerpreference" >
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                        <div *ngIf="fitnessForm.get('trainerpreference').errors">
+                            <p class="error-color" *ngIf="trainerpreference.errors.required && trainerpreference.touched">Please select Either value</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br ><br >
+        <h4><i class="fas fa-rupee-sign"></i> Select Package</h4>
+        <div class="package-section">
+            <div class="row">                 
+                <div class="col-lg-3">
+                    <label>Select the package:-</label>
+                </div>
+                <div class="col-lg-3">
+                    <input type="radio" id="basic" value=" Basic" name="packages" (click)="setInputValue('basic')" formControlName="packages">
+                    <label class="text-gap" for="packages"> Basic</label>
+                </div>
+                <div class="col-lg-3">
+                    <input type="radio" id="premium" value=" Premium" name="packages" (click)="setInputValue('premium')" formControlName="packages">
+                    <label class="text-gap" for="package"> Premium</label>
+                </div>
+                <div class="col-lg-3">
+                    <input type="radio" id="platinum" value=" Platinum" name="packages" (click)="setInputValue('platinum')" formControlName="packages">
+                    <label class="text-gap" for="package"> Platinum</label>
+                </div>
+                <div *ngIf="fitnessForm.get('packages').errors">
+                    <div>
+                        <p class="error-color" *ngIf="packages.errors.required && packages.touched" >Please select either value</p>
+                    </div>
+                </div>
+            </div> 
+            <br ><br> 
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-3">
+                        <label>Rupee</label>
+                        <input type="number" class="form-control" name="inr" id="inr" formControlName="inr" placeholder="rupees" required>
+                        <div *ngIf="fitnessForm.get('inr').errors">
+                            <p class="error-color" *ngIf="inr.errors.required && inr.touched">Please fill Amount</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <label>paisa</label>
+                        <input type="number" class="form-control" name="paisa" id="paisa" formControlName="paisa" placeholder="paisa"  required>
+                        <div *ngIf="fitnessForm.get('paisa').errors">
+                            <p class="error-color" *ngIf="paisa.errors.required && paisa.touched">Please fill amount in paisa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <br >
+        <div class="row">
+            <div class="col-lg-2">
+                <input type="submit" [disabled]="!fitnessForm.valid" class="btn btn-block btn-primary" value="submit">
+            </div>
+        </div>
+    </form>
+</div>

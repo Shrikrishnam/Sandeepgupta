@@ -1,0 +1,28 @@
+<h1 class="container text-color">List Of Appointments</h1>
+<div class="container show-appointment-section">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th class="h1">Sl NO</th>
+                <th class="h2">Name</th>
+                <th class="h3">Address</th>
+                <th class="h4">City</th>
+                <th class="h5">Package</th>
+                <th class="h6">Trainer Preference</th>
+                <th class="h7">Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let appointment of appointments">
+                <td>{{appointment.id}}</td>
+                <td>{{appointment.firstname}} {{appointment.lastname}}</td>
+                <td>{{appointment.streetaddress}}</td>
+                <td>{{appointment.city}}</td>
+                <td>{{appointment.packages}}</td>
+                <td>{{appointment.trainerpreference}}</td>
+                <td>{{appointment.phonenumber}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

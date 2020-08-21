@@ -1,0 +1,21 @@
+.landing-page-section{
+    padding-left:100px;
+}
+.intro-text{
+    font-size:102px;
+    color:white;
+    margin-top:70px;
+}
+.bg-text{
+    color:#bac964;
+}
+
+.main-button{
+    width:300px;
+    height:70px;
+    color:white;
+    font-size:28px;
+    font-weight:600;
+    background-color: #e7305b;
+    border-color:#e7305b;
+}

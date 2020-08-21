@@ -1,0 +1,39 @@
+.h1{
+    font-size:1rem;
+    font-weight:600;
+}
+.h2{
+    font-size:1rem;
+    font-weight:600;
+}
+.h3{
+    font-size:1rem;
+    font-weight:600;
+}
+.h4{
+    font-size:1rem;
+    font-weight:600;
+}
+.h5{
+    font-size:1rem;
+    font-weight:600;
+}
+.h6{
+    font-size:1rem;
+    font-weight:600;
+}
+.h7{
+    font-size:1rem;
+    font-weight:600;
+}
+
+
+.text-color{
+    color:white;
+    margin-top:30px;
+}
+.show-appointment-section{
+    background-color:white;
+    margin-top:10px;
+    padding:30px;
+}
